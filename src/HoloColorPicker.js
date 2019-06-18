@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { TouchableOpacity, Slider, View, Image, StyleSheet, InteractionManager, I18nManager } from 'react-native'
+import { TouchableOpacity, View, Image, StyleSheet, InteractionManager, I18nManager } from 'react-native'
 import tinycolor from 'tinycolor2'
 import { createPanResponder } from './utils'
+import Slider from "react-native-slider";
 
 export class HoloColorPicker extends React.PureComponent {
 
@@ -179,8 +180,20 @@ export class HoloColorPicker extends React.PureComponent {
         </View>
         { this.props.hideSliders == true ? null :
           <View>
-            <Slider value={s} onValueChange={this._onSValueChange} />
-            <Slider value={v} onValueChange={this._onVValueChange} />
+            <Slider value={s}
+              trackStyle={{height:1}}
+              thumbStyle={{height:20, width:20}}
+              thumbTintColor="#707070"
+              thumbTouchSize={{width: 40, height: 40}}
+              onValueChange={this._onSValueChange}
+            />
+            <Slider value={v}
+              trackStyle={{height:1}}
+              thumbStyle={{height:20, width:20}}
+              thumbTintColor="#707070"
+              thumbTouchSize={{width: 40, height: 40}}
+              onValueChange={this._onVValueChange}
+            />
           </View>
         }
       </View>
