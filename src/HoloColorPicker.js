@@ -179,7 +179,7 @@ export class HoloColorPicker extends React.PureComponent {
           }
         </View>
         { this.props.hideSliders == true ? null :
-          <View>
+          <View style={{marginTop: 10}}>
             <Text style={{color: 'black'}}>{this.props.slidersText && this.props.slidersText.saturation}</Text>
             <Slider value={s}
               trackStyle={{height:1}}
